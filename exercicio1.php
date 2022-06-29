@@ -3,6 +3,7 @@
     // Apresente o valor da parcela utilizando juros Simples no mesmo arquivo php (exercícios.php)
 
     // JUROS = CAPITAL EMPRESTADO * TAXA DE JUROS NO PERÍODO * TEMPO ( J = C * I * T)
+    
 ?>
 
 <!DOCTYPE html>
@@ -14,32 +15,17 @@
 </head>
 <body>
 <form action="#" method="get">
-        <input type="text" name="capital">
-        <input type="text" name="taxa">
-        <input type="text" name="parcela">
+       Capital emprestado: <input type="text" name="capital"><br>
+       Taxa de Juros: <input type="text" name="taxa"><br>
+       Parcelas: <input type="text" name="parcela"><br>
         <button type="submit" name="btn">Enviar</button>
         <p>
             <?php
-            if(isset($_GET['capital'])){
-                $txtcapital = $_GET['nome'];
+            function calcularMontante($capital, $taxa, $parcela){
+                $montante = $_GET["capital"] * $_GET["taxa"] * $_GET["periodo"];
+                return $montante;
             }
-            if(isset($_GET['taxa'])){
-                $txttaxa = $_GET['nome'];
-            }
-            if(isset($_GET['parcela'])){
-                $txtparcela = $_GET['nome'];
-            }
-            
-            if(isset($txtcapital)){
-                    echo($txtcapital);
-                }
-                if(isset($txttaxa)){
-                    echo($txttaxa);
-                }
-                if(isset($txtparcela)){
-                    echo($txtparcela);
-                }
-
+            echo "O total é: " .$montante;
             ?>
         </p>
     </form>
