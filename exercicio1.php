@@ -26,11 +26,12 @@
             $taxa = $_GET['taxa'];
             $parcela = $_GET['parcela'];
             
-            function calcularMontante($capital, $taxa, $parcela){
-                $resultado = $capital * $taxa * $periodo;
+                function calcularMontante($capital, $taxa, $parcela){
+                $resultado = $capital * $taxa * $parcela;
                 return $resultado;
             }
-        
+            $resultado=calcularMontante($_GET['capital'],$_GET['taxa'],$_GET['parcela']);
+            echo "O valor total com juros é de" .$resultado;
             ?>
         </p>
     </form>
